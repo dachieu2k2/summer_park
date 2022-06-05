@@ -4,18 +4,19 @@ import React from "react";
 import "./App.css";
 import Park from "./Components/Park";
 import * as THREE from "three";
+import Loader from "./Components/Loader";
 
 function App() {
   return (
     <Canvas id="three-container" shadows>
       <color attach={"background"} args={["#9A5DE6"]} />
-      <React.Suspense fallback={null}>
+      <React.Suspense fallback={<Loader />}>
         <OrbitControls makeDefault />
         <PerspectiveCamera makeDefault position={[2, 2, 2]} />
 
         <Park scale={0.2} />
         {/* Light */}
-        <primitive object={new THREE.AxesHelper(10)} />
+        {/* <primitive object={new THREE.AxesHelper(10)} /> */}
 
         <ambientLight args={["#9A5DE6", 0.5]} />
         {/* <rectAreaLight position={[0, 2, 0]} args={["#9A5DE6", 2, 3, 3]} /> */}

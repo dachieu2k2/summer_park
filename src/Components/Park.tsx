@@ -6,6 +6,7 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -109,6 +110,14 @@ type GLTFResult = GLTF & {
 export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>(null);
   const { nodes, materials } = useGLTF("chapter1.1.glb") as GLTFResult;
+
+  useFrame(({ clock }) => {
+    if (group.current) {
+      const a = clock.getElapsedTime();
+      group.current.rotation.y = a * 0.2;
+    }
+  });
+
   return (
     <group ref={group} {...props} dispose={null}>
       {/* <mesh
