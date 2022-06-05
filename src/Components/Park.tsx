@@ -335,14 +335,22 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
         />
       </mesh>
       <group castShadow position={[2.73, 1.2, 1.17]} scale={0.39}>
-        <mesh geometry={nodes.Circle.geometry} material={materials.metal} />
+        <mesh
+          castShadow
+          geometry={nodes.Circle.geometry}
+          material={materials.metal}
+        />
         <mesh
           geometry={nodes.Circle_1.geometry}
           material={materials["Material.001"]}
         />
       </group>
       <group castShadow position={[-2.21, 1.2, -3.56]} scale={0.39}>
-        <mesh geometry={nodes.Circle001.geometry} material={materials.metal} />
+        <mesh
+          castShadow
+          geometry={nodes.Circle001.geometry}
+          material={materials.metal}
+        />
         <mesh
           geometry={nodes.Circle001_1.geometry}
           material={materials["Material.001"]}
