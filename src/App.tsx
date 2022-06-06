@@ -3,6 +3,7 @@ import {
   OrbitControls,
   PerspectiveCamera,
   Stars,
+  Text,
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
@@ -13,14 +14,13 @@ import Loader from "./Components/Loader";
 function App() {
   return (
     <>
-      <h1>What happens?</h1>
-      <Canvas id="three-container" dpr={[1.5, 2]} shadows>
+      <Canvas id="three-container" shadows>
         <color attach={"background"} args={["#9A5DE6"]} />
+        <PerspectiveCamera makeDefault position={[1.75, 1.75, 1.75]} />
 
         <React.Suspense fallback={<Loader />}>
-          <PerspectiveCamera makeDefault position={[2, 2, 2]} />
-
           <Park scale={0.2} />
+
           <Stars radius={200} depth={50} count={1000} factor={10} />
           {/* Light */}
           {/* <primitive object={new THREE.AxesHelper(10)} /> */}
@@ -33,14 +33,12 @@ function App() {
             args={["#FF8666", 4, 3]}
           />
           {/* <rectAreaLight /> */}
+          <OrbitControls makeDefault enablePan={false} />
         </React.Suspense>
-        <OrbitControls makeDefault enablePan={false} />
       </Canvas>
-      <a
-        href="https://github.com/dachieu2k2"
-        className="top-left"
-        children="Github"
-      />
+      <a href="https://github.com/dachieu2k2" className="top-left">
+        <h1>SUMMER PARK</h1>
+      </a>
       <a
         href="https://www.facebook.com/hieu.hiihihaha/"
         className="top-right"
@@ -49,6 +47,11 @@ function App() {
       <a
         href="https://github.com/pmndrs/react-three-fiber"
         className="bottom-left"
+        children="@react-three/fiber"
+      />
+      <a
+        href="https://github.com/pmndrs/react-three-fiber"
+        className="bottom-right"
         children="@react-three/fiber"
       />
     </>
