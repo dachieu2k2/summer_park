@@ -42,7 +42,7 @@ function App() {
       <a
         href="https://www.facebook.com/hieu.hiihihaha/"
         className="top-right"
-        children="facebook"
+        children="@facebook"
       />
       <a
         href="https://github.com/pmndrs/react-three-fiber"
@@ -50,9 +50,9 @@ function App() {
         children="@react-three/fiber"
       />
       <a
-        href="https://github.com/pmndrs/react-three-fiber"
+        href="https://github.com/dachieu2k2"
         className="bottom-right"
-        children="@react-three/fiber"
+        children="@github"
       />
     </>
   );
